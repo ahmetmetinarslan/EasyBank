@@ -35,8 +35,8 @@ body {
 }
 
 body .container {
-  width: 100%;
-  height: 2000px;
+  width: 1920px;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -62,9 +62,24 @@ body .container .navbar {
   height: 70px;
   background-color: var(--White);
   position: fixed;
+  z-index: 1;
 }
 
-body .container .navbar .navlist {
+body .container .navbar .nav-container {
+  width: 70%;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .navbar .nav-container .navlist {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,16 +89,16 @@ body .container .navbar .navlist {
   gap: 40px;
 }
 
-body .container .navbar .navlist a {
+body .container .navbar .nav-container .navlist a {
   position: relative;
   color: var(--Grayish-Blue);
 }
 
-body .container .navbar .navlist a:hover {
+body .container .navbar .nav-container .navlist a:hover {
   color: var(--Dark-Blue);
 }
 
-body .container .navbar .navlist a:hover::after {
+body .container .navbar .nav-container .navlist a:hover::after {
   content: "";
   position: absolute;
   left: 0;
@@ -95,7 +110,7 @@ body .container .navbar .navlist a:hover::after {
   transition: height 0.3s ease;
 }
 
-body .container .navbar .nav-btn {
+body .container .navbar .nav-container .nav-btn {
   width: 135px;
   height: 40px;
   border: none;
@@ -109,10 +124,101 @@ body .container .navbar .nav-btn {
   cursor: pointer;
 }
 
-body .container .navbar .nav-btn:hover {
+body .container .navbar .nav-container .nav-btn:hover {
   -webkit-transition: .5s;
   transition: .5s;
   background: -webkit-gradient(linear, left top, right top, from(#5bdc7d), to(#ade3f0));
   background: linear-gradient(90deg, #5bdc7d, #ade3f0);
+}
+
+body .container .header {
+  background-color: var(--Light-Grayish-Blue);
+  width: 100%;
+  height: 850px;
+  margin-top: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+body .container .header .header-container {
+  width: 70%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .header .header-container .header-text {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+}
+
+body .container .header .header-container .header-text h2 {
+  font-size: 60px;
+  font-weight: 400;
+}
+
+body .container .header .header-container .header-text p {
+  font-weight: 100;
+  color: var(--Grayish-Blue);
+}
+
+body .container .header .header-container .header-text .header-btn {
+  width: 135px;
+  height: 40px;
+  border: none;
+  border-radius: 50px;
+  padding: 5px;
+  background: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da));
+  background: linear-gradient(90deg, #31d35c, #2bb7da);
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Public Sans', sans-serif;
+  cursor: pointer;
+}
+
+body .container .header .header-container .header-text .header-btn:hover {
+  -webkit-transition: .5s;
+  transition: .5s;
+  background: -webkit-gradient(linear, left top, right top, from(#5bdc7d), to(#ade3f0));
+  background: linear-gradient(90deg, #5bdc7d, #ade3f0);
+}
+
+body .container .header .header-container .header-intro-img {
+  width: 60%;
+  position: relative;
+  left: 30px;
+}
+
+body .container .header .header-container .header-intro-img img {
+  width: 1350px;
+}
+
+body .container .header .header-container .header-intro-img .header-intro-phones {
+  top: -25px;
+  left: 230px;
+  position: absolute;
+}
+
+body .container .header .header-container .header-intro-img .header-intro-phones img {
+  width: 1000px;
 }
 /*# sourceMappingURL=style.css.map */

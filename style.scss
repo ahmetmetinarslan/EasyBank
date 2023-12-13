@@ -28,14 +28,30 @@ a {
 @mixin pointer {
     cursor: pointer;
 }
+@mixin greenBtn {
+    width: 135px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    padding: 5px;
+    background: linear-gradient(90deg, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Public Sans', sans-serif;
+    @include pointer();    
+}
+@mixin greenBtnHover {
+    transition: .5s;
+    background: linear-gradient(90deg, hsl(136, 65%, 61%), hsl(192, 70%, 81%));    
+}
 
 body {
     font-size: 18px;
     font-family: 'Public Sans', sans-serif;
     @include flex-center();
     .container {
-        width: 100%;
-        height: 2000px;
+        width: 1920px;
+        height: auto;
         @include flex-center();
         .navbar {
             @include flex-center();
@@ -45,42 +61,92 @@ body {
             height: 70px;
             background-color: var(--White);
             position: fixed;
-            .navlist {
-                @include flex-center();
-                gap: 40px;
-                a {
+            z-index: 1;
+            .nav-container {
+                width: 70%;
+                height: 70px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .navlist {
+                    @include flex-center();
+                    gap: 40px;
+                    a {
+                        position: relative;
+                        color: var(--Grayish-Blue);
+                    }
+                    a:hover {
+                        color: var(--Dark-Blue);
+                    }
+                    a:hover::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: -23px;
+                        width: 100%;
+                        height: 3px;
+                        background-color: var(--Lime-Green);
+                        transition: height 0.3s ease;
+                    }
+                }
+                .nav-btn {
+                    @include greenBtn();
+                }
+                .nav-btn:hover {
+                    @include greenBtnHover();
+                }
+            }
+        }
+        .header {
+            background-color: var(--Light-Grayish-Blue);
+            width: 100%;
+            height: 850px;
+            margin-top: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            .header-container {
+                width: 70%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                .header-text {
+                    width: 40%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    h2 {
+                        font-size: 60px;
+                        font-weight: 400;
+                    }
+                    p {
+                        font-weight: 100;
+                        color: var(--Grayish-Blue);
+                    }
+                    .header-btn {
+                        @include greenBtn();
+                    }
+                    .header-btn:hover {
+                        @include greenBtnHover();
+                    }
+                }
+                .header-intro-img {
+                    width: 60%;
                     position: relative;
-                    color: var(--Grayish-Blue);
+                    left: 30px;
+                    img {
+                        width: 1350px;
+                    }
+                    .header-intro-phones {
+                        top: -25px;
+                        left: 230px;
+                        position: absolute;
+                        img {
+                            width: 1000px;
+                        }
+                    }
                 }
-                a:hover {
-                    color: var(--Dark-Blue);
-                }
-                a:hover::after {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    bottom: -23px;
-                    width: 100%;
-                    height: 3px;
-                    background-color: var(--Lime-Green);
-                    transition: height 0.3s ease;
-                }
-            }
-            .nav-btn {
-                width: 135px;
-                height: 40px;
-                border: none;
-                border-radius: 50px;
-                padding: 5px;
-                background: linear-gradient(90deg, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
-                color: #fff;
-                font-weight: bold;
-                font-family: 'Public Sans', sans-serif;
-                @include pointer();
-            }
-            .nav-btn:hover {
-                transition: .5s;
-                background: linear-gradient(90deg, hsl(136, 65%, 61%), hsl(192, 70%, 81%));
             }
         }
     }
