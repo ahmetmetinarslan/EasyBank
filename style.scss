@@ -21,6 +21,7 @@ a {
     text-decoration: none;
 }
 
+// MIXIN
 @mixin flex-center {
     display: flex;
     justify-content: center;
@@ -44,6 +45,7 @@ a {
     transition: .5s;
     background: linear-gradient(90deg, hsl(136, 65%, 61%), hsl(192, 70%, 81%));    
 }
+// #MIXIN
 
 body {
     font-size: 18px;
@@ -55,6 +57,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
+        // NAV
         .navbar {
             @include flex-center();
             justify-content: space-evenly;
@@ -99,13 +102,15 @@ body {
                 }
             }
         }
+        // #NAV
+
+        // HEADER
         .header {
             background-color: var(--Very-Light-Gray);
             width: 100%;
             height: 850px;
             margin-top: 70px;
-            display: flex;
-            justify-content: center;
+            @include flex-center();
             align-items: center;
             .header-container {
                 width: 70%;
@@ -150,12 +155,14 @@ body {
                 }
             }
         }
+        // #HEADER
+
+        // SECTION-ONE
         .section-one {
             background-color: var(--Light-Grayish-Blue);
             width: 100%;
             height: 750px;
-            display: flex;
-            justify-content: center;
+            @include flex-center();
             .section-one-container {
                 width: 70%;
                 display: flex;
@@ -200,6 +207,9 @@ body {
                 }
             }
         }
+        // #SECTION-ONE
+
+        // SECTION-TWO
         .section-two {
             background-color: var(--Very-Light-Gray);
             width: 100%;
@@ -259,5 +269,76 @@ body {
                 }
             }
         }
+        // #SECTION-TWO
+
+        // FOOTER
+        .footer {
+            background-color: var(--Dark-Blue);
+            width: 100%;
+            height: 200px;
+            @include flex-center();
+            .footer-container {
+                width: 70%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .footer-logos {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                    img {
+                        color: #fff;
+                        cursor: pointer;
+                    }
+                    .footer-social {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 15px;
+                        svg {
+                            cursor: pointer;
+                        }
+                        svg path:hover {
+                            fill: var(--Lime-Green);
+                            transition: fill 0.3s;
+                        }
+                    }
+                }
+                .footer-menu {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 100px;
+                    a {
+                        color: var(--Grayish-Blue);
+                        text-decoration: none;
+                    }
+                    a:hover {
+                        color: var(--Lime-Green);
+                        transition: .3s;
+                    }
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                    }
+                }
+                .footer-reserved {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    gap: 40px;
+                    button {
+                        @include greenBtn();
+                    }
+                    button:hover {
+                        @include greenBtnHover();
+                    }
+                    p {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        // #FOOTER
     }
 }
