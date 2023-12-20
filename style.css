@@ -83,7 +83,12 @@ body .container .navbar .nav-container {
           align-items: center;
 }
 
+body .container .navbar .nav-container .mobile-menu {
+  display: none;
+}
+
 body .container .navbar .nav-container .navlist {
+  display: inline;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -223,6 +228,10 @@ body .container .header .header-container .header-intro-img .header-intro-phones
 
 body .container .header .header-container .header-intro-img .header-intro-phones img {
   width: 1000px;
+}
+
+body .container .header .header-container .header-intro-img-mobile {
+  display: none;
 }
 
 body .container .section-one {
@@ -532,5 +541,56 @@ body .container .footer .footer-container .footer-reserved button:hover {
 
 body .container .footer .footer-container .footer-reserved p {
   color: #fff;
+}
+
+@media (width: 375px) {
+  body .container {
+    width: 375px;
+    overflow: hidden;
+  }
+  body .container .navbar .nav-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 90%;
+  }
+  body .container .navbar .nav-container .mobile-menu {
+    display: inline;
+    cursor: pointer;
+  }
+  body .container .navbar .nav-container .mobile-menu img {
+    width: 30px;
+  }
+  body .container .navbar .nav-container .navlist {
+    display: none;
+  }
+  body .container .navbar .nav-container .nav-btn {
+    display: none;
+  }
+  body .container .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  body .container .header .header-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  body .container .header .header-container .header-intro-img-mobile {
+    display: inline;
+  }
 }
 /*# sourceMappingURL=style.css.map */
