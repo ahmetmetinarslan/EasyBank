@@ -384,35 +384,62 @@ body {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                border: 1px solid green;
+                height: auto;
                 overflow: hidden;
                 .header-container {
                     display: flex;
                     flex-direction: column-reverse;
-                    border: 1px solid blue;
                     overflow: hidden;
                     width: 100%;
+                    height: 700px;
+                    position: relative;
                     .header-intro-img {
                         display: none;
                     }
                     .header-intro-img-mobile {
-                        border: 1px solid red;
                         width: 100%;
-                        height: 100%;
+                        height: 510px;
                         display: inline;
                         position: relative;
+                        overflow: hidden;
                         img {
                             width: 375px;
-                            height: 400px;
+                            height: 375px;
+                            margin-left: 0px;
                         }
                         .header-intro-phones-mobile {
                             position: absolute;
-                            border: 1px solid yellow;
+                            margin-top: -510px;
                             img {
-                                width: 350px;
-                                height: 420px;
+                                width: 100%;
+                                height: 100%;
                             }
                         }
+                    }
+                    .header-text {
+                        width: 375px;
+                        height: 350px;
+                        text-align: center;
+                        align-items: center;
+                        margin-bottom: 60px;
+                        h2 {
+                            font-size: 40px;
+                            font-weight: 100;
+                        }
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+            .section-one {
+                border: 1px solid red;
+                .section-one-container {
+                    .section-one-top {
+
+                    }
+                    .section-one-bottom {
+
                     }
                 }
             }
